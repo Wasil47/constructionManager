@@ -1,0 +1,13 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">
+      {{ selectName }}
+    </label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect">
+    <!-- <option selected>Choose...</option> -->
+    <option *ngFor="let object of objects; let i = index" value="{{ i }}">
+      {{ object }}
+    </option>
+  </select>
+</div>
