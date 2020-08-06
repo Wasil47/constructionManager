@@ -1,0 +1,20 @@
+<div class="container-lg">
+  <button
+    class="btn btn-secondary btn-block"
+    type="button"
+    data-toggle="collapse"
+    attr.data-target="#collapse{{ infoId }}"
+    aria-expanded="false"
+    attr.aria-controls="collapse{{ infoId }}"
+  >
+    <div class="row align-items-center">
+      <div class="col-8 h4 m-0">{{ infoName }}</div>
+      <div class="col-4 h4 m-0 text-right">{{ infoPercent }}%</div>
+    </div>
+  </button>
+  <div class="collapse" id="collapse{{ infoId }}">
+    <div class="card card-body">
+      <app-dropdown-info-detail></app-dropdown-info-detail>
+    </div>
+  </div>
+</div>

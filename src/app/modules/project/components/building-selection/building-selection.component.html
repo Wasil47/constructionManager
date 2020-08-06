@@ -1,7 +1,10 @@
 <p>building-selection works!</p>
+
+<h1 *ngFor="let object of objects">{{object.buildingName}}</h1>
+
 <app-dropdown-select
   [selectName]="selectObiekt"
-  [objects]="objects"
+  [objects]="objectsList"
 ></app-dropdown-select>
 <app-dropdown-select
   [selectName]="selectFragment"
@@ -11,3 +14,4 @@
   [selectName]="selectStorey"
   [objects]="storeys"
 ></app-dropdown-select>
+
