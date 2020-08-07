@@ -1,9 +1,35 @@
 <p>category-selection works!</p>
-<app-dropdown-select
+
+<div class="input-group mb-3 container-lg">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">
+      {{ selectCategory }}
+    </label>
+  </div>
+  <select
+    #categorySelect
+    class="custom-select"
+    id="inputGroupSelect"
+    (change)="onCategoryChange(categorySelect)"
+  >
+    <!-- <option selected>Choose...</option> -->
+    <ng-container *ngFor="let category of categories; let i = index">
+      <option
+        value="{{ category.categoryId }}"
+      >
+        {{ category.categoryName }}
+      </option>
+    </ng-container>
+  </select>
+</div>
+
+
+<!-- <app-dropdown-select
   [selectName]="selectCategory"
   [objects]="categories"
-></app-dropdown-select>
+></app-dropdown-select> -->
+<!-- 
 <app-dropdown-select
   [selectName]="selectRoom"
   [objects]="rooms"
-></app-dropdown-select>
+></app-dropdown-select> -->

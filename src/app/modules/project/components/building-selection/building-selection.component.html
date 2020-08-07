@@ -1,17 +1,93 @@
 <p>building-selection works!</p>
 
-<h1 *ngFor="let object of objects">{{object.buildingName}}</h1>
+<button (click)="newMessage()">{{message}}</button>
+<!--  -->
+<div class="input-group mb-3 container-lg">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">
+      {{ selectBuilding }}
+    </label>
+  </div>
+  <select
+    #buildingSelect
+    class="custom-select"
+    id="inputGroupSelect"
+    (change)="onBuildingChange(buildingSelect)"
+  >
+    <!-- <option selected>Choose...</option> -->
+    <ng-container *ngFor="let building of buildings; let i = index">
+      <option
+        value="{{ building.buildingId }}"
+      >
+        {{ building.buildingName}}
+      </option>
+    </ng-container>
+<!-- 
+    <option
+      *ngFor="let building of buildings; let i = index"
+      value="{{ building.buildingId }}"
+    >
+      {{ building.buildingName }}
+    </option> -->
 
-<app-dropdown-select
+  </select>
+</div>
+
+<div class="input-group mb-3 container-lg">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">
+      {{ selectFragment }}
+    </label>
+  </div>
+  <select
+    #fragmentSelect
+    class="custom-select"
+    id="inputGroupSelect"
+    (change)="onFragmentChange(fragmentSelect)"
+  >
+    <!-- <option selected>Choose...</option> -->
+    <ng-container *ngFor="let fragment of fragments; let i = index">
+      <option
+        *ngIf="buildingSelect.value == fragment.buildingId"
+        value="{{ fragment.fragmentId }}"
+      >
+        {{ fragment.fragmentName }}
+      </option>
+    </ng-container>
+  </select>
+</div>
+
+<div class="input-group mb-3 container-lg">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">
+      {{ selectStorey }}
+    </label>
+  </div>
+  <select #storeySelect class="custom-select" id="inputGroupSelect"
+  (change)="onStoreyChange(storeySelect)">
+    <!-- <option selected>Choose...</option> -->
+    <ng-container *ngFor="let storey of storeys; let i = index">
+      <option
+        *ngIf="fragmentSelect.value == storey.fragmentId"
+        value="{{ storey.storeyId }}"
+      >
+        {{ storey.storeyName }}
+      </option>
+    </ng-container>
+  </select>
+</div>
+
+<!--  -->
+
+<!-- <app-dropdown-select
   [selectName]="selectObiekt"
-  [objects]="objectsList"
-></app-dropdown-select>
-<app-dropdown-select
+  [buildings]="buildingsList"
+></app-dropdown-select> -->
+<!-- <app-dropdown-select
   [selectName]="selectFragment"
-  [objects]="fragments"
-></app-dropdown-select>
-<app-dropdown-select
+  [buildings]="fragmentsList"
+></app-dropdown-select> -->
+<!-- <app-dropdown-select
   [selectName]="selectStorey"
-  [objects]="storeys"
-></app-dropdown-select>
-
+  [buildings]="storeys"
+></app-dropdown-select> -->
