@@ -43,33 +43,29 @@ export class BuildingSelectionComponent implements OnInit {
   selectFragment = 'Część';
   selectStorey = 'Kondygnacja';
 
-  onBuildingChange(buildingSelect) {
-    this.buildingIdSelected = buildingSelect.value;
-    console.log('Building ID: ' + this.buildingIdSelected);
-  }
-  onFragmentChange(fragmentSelect) {
-    this.fragmentIdSelected = fragmentSelect.value;
-    console.log('Fragment ID: ' + this.fragmentIdSelected);
-  }
-  onStoreyChange(storeySelect) {
-    this.storeyIdSelected = storeySelect.value;
-    console.log('Storey ID: ' + this.storeyIdSelected);
-  }
-
   //
   message: string;
   constructor(private building: BuildingService) {}
 
-
-  ngOnInit(): void {
-
-    this.building.currentMessage.subscribe(message => this.message = message)
+  onBuildingChange(buildingSelect) {
+    this.buildingIdSelected = buildingSelect;
+    console.log('Building ID: ' + this.buildingIdSelected);
+    //
+    this.building.changeBuilding(buildingSelect);
+    // this.building.buildingIdSelected.subscribe(id => this.testId = id)
+    this.onFragmentChange(null);
+  }
+  onFragmentChange(fragmentSelect) {
+    this.fragmentIdSelected = fragmentSelect;
+    console.log('Fragment ID: ' + this.fragmentIdSelected);
+    this.building.changeFragment(fragmentSelect);
+    this.onStoreyChange(null);
+  }
+  onStoreyChange(storeySelect) {
+    this.storeyIdSelected = storeySelect;
+    console.log('Storey ID: ' + this.storeyIdSelected);
+    this.building.changeStorey(storeySelect);
   }
 
-  newMessage() {
-    this.building.changeMessage("Hello from Sibling")
-    this.building.subject.subscribe(console.log)
-    // console.log(this.building.subject)
-  }
-
+  ngOnInit(): void {}
 }

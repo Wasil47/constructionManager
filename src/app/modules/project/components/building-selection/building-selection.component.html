@@ -1,6 +1,5 @@
 <p>building-selection works!</p>
 
-<button (click)="newMessage()">{{message}}</button>
 <!--  -->
 <div class="input-group mb-3 container-lg">
   <div class="input-group-prepend">
@@ -12,24 +11,21 @@
     #buildingSelect
     class="custom-select"
     id="inputGroupSelect"
-    (change)="onBuildingChange(buildingSelect)"
+    (change)="onBuildingChange(buildingSelect.value)"
   >
     <!-- <option selected>Choose...</option> -->
     <ng-container *ngFor="let building of buildings; let i = index">
-      <option
-        value="{{ building.buildingId }}"
-      >
-        {{ building.buildingName}}
+      <option value="{{ building.buildingId }}">
+        {{ building.buildingName }}
       </option>
     </ng-container>
-<!-- 
+    <!-- 
     <option
       *ngFor="let building of buildings; let i = index"
       value="{{ building.buildingId }}"
     >
       {{ building.buildingName }}
     </option> -->
-
   </select>
 </div>
 
@@ -43,9 +39,9 @@
     #fragmentSelect
     class="custom-select"
     id="inputGroupSelect"
-    (change)="onFragmentChange(fragmentSelect)"
+    (change)="onFragmentChange(fragmentSelect.value)"
   >
-    <!-- <option selected>Choose...</option> -->
+    <option selected>Choose...</option>
     <ng-container *ngFor="let fragment of fragments; let i = index">
       <option
         *ngIf="buildingSelect.value == fragment.buildingId"
@@ -63,9 +59,13 @@
       {{ selectStorey }}
     </label>
   </div>
-  <select #storeySelect class="custom-select" id="inputGroupSelect"
-  (change)="onStoreyChange(storeySelect)">
-    <!-- <option selected>Choose...</option> -->
+  <select
+    #storeySelect
+    class="custom-select"
+    id="inputGroupSelect"
+    (change)="onStoreyChange(storeySelect.value)"
+  >
+    <option selected>Choose...</option>
     <ng-container *ngFor="let storey of storeys; let i = index">
       <option
         *ngIf="fragmentSelect.value == storey.fragmentId"

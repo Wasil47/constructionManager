@@ -13,6 +13,6 @@ import { DropdownInfoDetailComponent } from './components/dropdown-info/dropdown
     CommonModule,
     SharedRoutingModule
   ],
-  exports: [DropdownSelectComponent, DropdownInfoComponent]
+  exports: [DropdownSelectComponent, DropdownInfoComponent, DropdownInfoDetailComponent]
 })
 export class SharedModule { }

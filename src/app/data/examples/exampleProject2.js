@@ -106,21 +106,25 @@ export const exampleWorkDetails = [
   {
     workId: 0,
     workDetailId: 0,
+    workDetailProgress: 100,
     workDetailName: "Murarze",
   },
   {
     workId: 0,
     workDetailId: 1,
+    workDetailProgress: 80,
     workDetailName: "Tynkarze",
   },
   {
     workId: 1,
     workDetailId: 2,
+    workDetailProgress: 90,
     workDetailName: "Okna",
   },
   {
     workId: 1,
     workDetailId: 3,
+    workDetailProgress: 50,
     workDetailName: "Drzwi",
   },
 ];
@@ -133,15 +137,23 @@ export const exampleWorkProgress = [
     workDetailId: 0,
 
     workProgressId: 0,
-    workProgress: 100,
+    // workProgress: 100,
     workDetailImages: [
       {
         imagesData: "25-08-2020",
         images: [
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+        ],
+      },
+      {
+        imagesData: "11-08-2020",
+        images: [
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+          "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
         ],
       },
     ],
@@ -153,15 +165,15 @@ export const exampleWorkProgress = [
     workDetailId: 1,
 
     workProgressId: 1,
-    workProgress: 80,
+    // workProgress: 80,
     workDetailImages: [
       {
         imagesData: "29-08-2020",
         images: [
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
+          "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+          "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+          "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+          "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
         ],
       },
     ],
@@ -170,18 +182,16 @@ export const exampleWorkProgress = [
     buildingId: 1,
     fragmentId: 2,
     storeyId: 2,
-    workDetailId: 0,
+    workDetailId: 2,
 
     workProgressId: 2,
-    workProgress: 90,
+    // workProgress: 90,
     workDetailImages: [
       {
         imagesData: "12-09-2020",
         images: [
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
+          "https://fixly.pl/blog/wp-content/uploads/2018/12/monta%C5%BC-okien.jpg",
+          "https://fixly.pl/blog/wp-content/uploads/2018/12/monta%C5%BC-okien.jpg",
         ],
       },
     ],
@@ -190,18 +200,18 @@ export const exampleWorkProgress = [
     buildingId: 1,
     fragmentId: 2,
     storeyId: 2,
-    workDetailId: 1,
+    workDetailId: 3,
 
     workProgressId: 3,
-    workProgress: 50,
+    // workProgress: 50,
     workDetailImages: [
       {
         imagesData: "21-09-2020",
         images: [
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
-          "https://lh3.googleusercontent.com/proxy/SfP7sxPvUGo386tjelnKp7TO5MVV3RerYl-P4l22yZLdtU1xdTrks2kdYVaBaX7RVha2-PHfAKepS-l6gtUO8Dak1x8eTny6CmHfnzyPkpBTrzkW90blI2Y5k7m4_T8PGl32UHj4g6joib7p-aLwhO9TGO3e9SRowFeeDh4",
+          "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+          "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+          "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+          "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
         ],
       },
     ],

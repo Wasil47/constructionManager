@@ -8,26 +8,28 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class BuildingService {
-  
-  public subject = new BehaviorSubject(123);
-
-  private messageSource = new BehaviorSubject('default message');
-  currentMessage = this.messageSource.asObservable();
-
-
   private buildingId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   buildingIdSelected = this.buildingId.asObservable();
+  private fragmentId: BehaviorSubject<number> = new BehaviorSubject<number>(
+    null
+  );
+  fragmentIdSelected = this.fragmentId.asObservable();
+  private storeyId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+  storeyIdSelected = this.storeyId.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   changeBuilding(selectedId: number) {
     this.buildingId.next(selectedId);
-    console.log('Building ID: ' + this.buildingIdSelected);
+    console.log('Building ID: ' + this.buildingId.value);
   }
-
-
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  changeFragment(selectedId: number) {
+    this.fragmentId.next(selectedId);
+    console.log('Fragment ID: ' + this.fragmentId.value);
+  }
+  changeStorey(selectedId: number) {
+    this.storeyId.next(selectedId);
+    console.log('Storey ID: ' + this.storeyId.value);
   }
 
   // buildingIdSelected: number;
@@ -62,6 +64,4 @@ export class BuildingService {
   //   this.storeyIdSelected = storeySelect.value;
   //   console.log('Storey ID: ' + this.storeyIdSelected);
   // }
-
-
 }
