@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { exampleCategory } from '../../../../data/examples/exampleProject2';
+import { BuildingService } from '../../services/building.service';
 
 @Component({
   selector: 'app-category-selection',
@@ -17,16 +18,13 @@ export class CategorySelectionComponent implements OnInit {
 
   selectCategory = 'Kategoria';
 
-  // selectRoom = 'Pomieszczenie';
-  // rooms = ['Wszystkie'];
+  constructor(private building: BuildingService) {}
 
   onCategoryChange(categorySelect) {
-    this.categoryIdSelected = categorySelect.value;
-    console.log('Object ID: ' + this.categoryIdSelected);
+    this.categoryIdSelected = categorySelect;
+    console.log('Category ID: ' + this.categoryIdSelected);
+    this.building.changeCategory(categorySelect);
   }
- 
-
-  constructor() {}
 
   ngOnInit(): void {}
 }

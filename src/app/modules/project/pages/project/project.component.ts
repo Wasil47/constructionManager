@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildingService } from '../../services/building.service';
 
 @Component({
   selector: 'app-project',
@@ -6,5 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
-  constructor() {}
+  editMode: boolean;
+  constructor(private building: BuildingService) {}
+  onSubmitEdit(boolean) {
+    this.editMode = boolean;
+    this.building.changeEditMode(boolean);
+  }
+
+  ngOnInit(): void {
+    this.building.editModeSelected.subscribe(
+      (boolean) => (this.editMode = boolean)
+    );
+  }
 }

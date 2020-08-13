@@ -19,6 +19,8 @@ export class BuildingSelectionComponent implements OnInit {
   fragmentIdSelected: number;
   storeyIdSelected: number;
 
+  editMode: boolean;
+
   // define Arrays
   // buildingsList: string[] = [];
   // fragmentsList: string[] = [];
@@ -43,16 +45,12 @@ export class BuildingSelectionComponent implements OnInit {
   selectFragment = 'Część';
   selectStorey = 'Kondygnacja';
 
-  //
-  message: string;
   constructor(private building: BuildingService) {}
 
   onBuildingChange(buildingSelect) {
     this.buildingIdSelected = buildingSelect;
     console.log('Building ID: ' + this.buildingIdSelected);
-    //
     this.building.changeBuilding(buildingSelect);
-    // this.building.buildingIdSelected.subscribe(id => this.testId = id)
     this.onFragmentChange(null);
   }
   onFragmentChange(fragmentSelect) {
@@ -67,5 +65,9 @@ export class BuildingSelectionComponent implements OnInit {
     this.building.changeStorey(storeySelect);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.building.editModeSelected.subscribe(
+      (boolean) => (this.editMode = boolean)
+    );
+  }
 }

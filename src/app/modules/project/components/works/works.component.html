@@ -1,14 +1,21 @@
 <p>works works!</p>
 
-<button (click)="test()">TEST</button>
 <p>{{ buildingIdSelected }}</p>
 <p>{{ fragmentIdSelected }}</p>
 <p>{{ storeyIdSelected }}</p>
+<p>{{ categoryIdSelected }}</p>
+
+<p>editMode: {{ editMode }}</p>
 
 <ng-container *ngFor="let work of works; let i = index">
   <div
     class="container-lg my-2"
-    *ngIf="checkValue(buildingIdSelected, work.buildingId)"
+    *ngIf="
+      checkValue(buildingIdSelected, work.buildingId) &&
+      checkValue(fragmentIdSelected, work.fragmentId) &&
+      checkValue(storeyIdSelected, work.storeyId) &&
+      checkValue(categoryIdSelected, work.categoryId)
+    "
   >
     <button
       class="btn btn-secondary btn-block"
@@ -20,14 +27,23 @@
     >
       <div class="row align-items-center">
         <div class="col-8 h4 m-0">{{ work.workName }}</div>
-        <div class="col-4 h4 m-0 text-right">{{ infoPercent }}%</div>
+        <div class="col-4 h4 m-0 text-right">
+          {{ checkProgress(work.workId) }}%
+        </div>
       </div>
     </button>
 
     <div class="collapse" id="collapse{{ work.workId }}">
       <div class="card card-body">
         <ng-container *ngFor="let workDetail of workDetails; let i = index">
-          <div *ngIf="work.workId == workDetail.workId">
+          <div
+            *ngIf="
+              work.workId == workDetail.workId &&
+              checkId(buildingIdSelected, workDetail.buildingId) &&
+              checkId(fragmentIdSelected, workDetail.fragmentId) &&
+              checkId(storeyIdSelected, workDetail.storeyId)
+            "
+          >
             <div
               class="container px-0"
               type="button"
@@ -59,26 +75,19 @@
             >
               <div class="card card-body">
                 <ng-container
-                  *ngFor="let progress of workProgress; let i = index"
+                  *ngFor="let workImage of workDetail.workDetailImages"
                 >
-                  <div
-                    class="align-items-center"
-                    *ngIf="workDetail.workDetailId == progress.workDetailId"
-                  >
-                    <div
-                      *ngFor="let workDetailImage of progress.workDetailImages"
-                    >
-                      <div class="col bg-light text-center mt-1">
-                        {{ workDetailImage.imagesData }}
-                      </div>
-                      <div class="row">
-                        <img
-                          *ngFor="let image of workDetailImage.images"
-                          src="{{ image }}"
-                          class="rounded mx-auto d-block col-12 col-sm-6 col-md-4 col-lg-3 mb-1"
-                          alt="..."
-                        />
-                      </div>
+                  <div class="align-items-center">
+                    <div class="col bg-light text-center mt-1">
+                      {{ workImage.imagesData }}
+                    </div>
+                    <div class="row">
+                      <img
+                        *ngFor="let image of workImage.images"
+                        src="{{ image }}"
+                        class="rounded mx-auto d-block col-12 col-sm-6 col-md-4 col-lg-3 mb-1"
+                        alt="..."
+                      />
                     </div>
                   </div>
                 </ng-container>

@@ -1,9 +1,33 @@
 <p>building-selection works!</p>
 
 <!--  -->
+<form *ngIf="editMode" class="container-lg my-1">
+  <div class="form-row">
+    <div class="col">
+      <input
+        class="form-control"
+        id="addBuilding"
+        type="text"
+        formControlName="addBuilding"
+        placeholder="Add new Building"
+      />
+    </div>
+    <button class="btn btn-success" type="submit">+</button>
+  </div>
+  
+</form>
+
 <div class="input-group mb-3 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
+      <!-- <input
+        *ngIf="editMode; else elseBlock"
+        id="selectBuilding"
+        type="text"
+        formControlName="selectBuilding"
+        value="{{ selectBuilding }}"
+      />
+      <ng-template #elseBlock>{{ selectBuilding }}</ng-template> -->
       {{ selectBuilding }}
     </label>
   </div>
@@ -14,6 +38,7 @@
     (change)="onBuildingChange(buildingSelect.value)"
   >
     <!-- <option selected>Choose...</option> -->
+    <!-- <option value="{{ null }}" selected>Wszystkie...</option> -->
     <ng-container *ngFor="let building of buildings; let i = index">
       <option value="{{ building.buildingId }}">
         {{ building.buildingName }}
@@ -41,7 +66,7 @@
     id="inputGroupSelect"
     (change)="onFragmentChange(fragmentSelect.value)"
   >
-    <option selected>Choose...</option>
+    <option value="{{ null }}" selected>Wszystkie...</option>
     <ng-container *ngFor="let fragment of fragments; let i = index">
       <option
         *ngIf="buildingSelect.value == fragment.buildingId"
@@ -65,10 +90,12 @@
     id="inputGroupSelect"
     (change)="onStoreyChange(storeySelect.value)"
   >
-    <option selected>Choose...</option>
+    <option value="{{ null }}" selected>Wszystkie...</option>
     <ng-container *ngFor="let storey of storeys; let i = index">
       <option
-        *ngIf="fragmentSelect.value == storey.fragmentId"
+        *ngIf="
+          fragmentSelect.value == storey.fragmentId && fragmentSelect.value
+        "
         value="{{ storey.storeyId }}"
       >
         {{ storey.storeyName }}

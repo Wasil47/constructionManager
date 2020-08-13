@@ -10,7 +10,7 @@
     #categorySelect
     class="custom-select"
     id="inputGroupSelect"
-    (change)="onCategoryChange(categorySelect)"
+    (change)="onCategoryChange(categorySelect.value)"
   >
     <!-- <option selected>Choose...</option> -->
     <ng-container *ngFor="let category of categories; let i = index">

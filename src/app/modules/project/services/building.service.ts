@@ -1,9 +1,4 @@
 import { Injectable } from '@angular/core';
-import {
-  exampleBuildings,
-  exampleFragments,
-  exampleStoreys,
-} from '../../../data/examples/exampleProject2';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
@@ -16,6 +11,13 @@ export class BuildingService {
   fragmentIdSelected = this.fragmentId.asObservable();
   private storeyId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   storeyIdSelected = this.storeyId.asObservable();
+  private categoryId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  categoryIdSelected = this.categoryId.asObservable();
+
+  private editMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  editModeSelected = this.editMode.asObservable();
 
   constructor() {}
 
@@ -31,37 +33,12 @@ export class BuildingService {
     this.storeyId.next(selectedId);
     console.log('Storey ID: ' + this.storeyId.value);
   }
-
-  // buildingIdSelected: number;
-  // fragmentIdSelected: number;
-  // storeyIdSelected: number;
-  // categoryIdSelected: number;
-
-  // buildings: {
-  //   buildingId: number;
-  //   buildingName: string;
-  // } = exampleBuildings;
-  // fragments: {
-  //   buildingId: number;
-  //   fragmentId: number;
-  //   fragmentName: string;
-  // } = exampleFragments;
-  // storeys: {
-  //   fragmentId: number;
-  //   storeyId: number;
-  //   storeyName: string;
-  // } = exampleStoreys;
-
-  // onBuildingChange(buildingSelect) {
-  //   this.buildingIdSelected = buildingSelect.value;
-  //   console.log('Building ID: ' + this.buildingIdSelected);
-  // }
-  // onFragmentChange(fragmentSelect) {
-  //   this.fragmentIdSelected = fragmentSelect.value;
-  //   console.log('Fragment ID: ' + this.fragmentIdSelected);
-  // }
-  // onStoreyChange(storeySelect) {
-  //   this.storeyIdSelected = storeySelect.value;
-  //   console.log('Storey ID: ' + this.storeyIdSelected);
-  // }
+  changeCategory(selectedId: number) {
+    this.categoryId.next(selectedId);
+    console.log('Category ID: ' + this.categoryId.value);
+  }
+  changeEditMode(boolean: boolean) {
+    this.editMode.next(boolean);
+    console.log('Edit mode: ' + this.editMode.value);
+  }
 }

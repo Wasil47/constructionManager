@@ -101,43 +101,33 @@ export const exampleWorks = [
     workId: 1,
     workName: "Stolarka",
   },
+  {
+    buildingId: [1],
+    fragmentId: [2, 3],
+    storeyId: [2, 3],
+    categoryId: [0, 3],
+    workId: 2,
+    workName: "Kanalizacja",
+  },
+  {
+    buildingId: [0],
+    fragmentId: [0, 1],
+    storeyId: [0, 1, 4],
+    categoryId: [0, 2],
+    workId: 3,
+    workName: "Instalacja NN",
+  },
 ];
 export const exampleWorkDetails = [
-  {
-    workId: 0,
-    workDetailId: 0,
-    workDetailProgress: 100,
-    workDetailName: "Murarze",
-  },
-  {
-    workId: 0,
-    workDetailId: 1,
-    workDetailProgress: 80,
-    workDetailName: "Tynkarze",
-  },
-  {
-    workId: 1,
-    workDetailId: 2,
-    workDetailProgress: 90,
-    workDetailName: "Okna",
-  },
-  {
-    workId: 1,
-    workDetailId: 3,
-    workDetailProgress: 50,
-    workDetailName: "Drzwi",
-  },
-];
-
-export const exampleWorkProgress = [
   {
     buildingId: 0,
     fragmentId: 0,
     storeyId: 0,
-    workDetailId: 0,
 
-    workProgressId: 0,
-    // workProgress: 100,
+    workId: 0,
+    workDetailId: 0,
+    workDetailProgress: 100,
+    workDetailName: "Murarze",
     workDetailImages: [
       {
         imagesData: "25-08-2020",
@@ -162,10 +152,11 @@ export const exampleWorkProgress = [
     buildingId: 0,
     fragmentId: 0,
     storeyId: 0,
-    workDetailId: 1,
 
-    workProgressId: 1,
-    // workProgress: 80,
+    workId: 0,
+    workDetailId: 1,
+    workDetailProgress: 80,
+    workDetailName: "Tynkarze",
     workDetailImages: [
       {
         imagesData: "29-08-2020",
@@ -177,15 +168,17 @@ export const exampleWorkProgress = [
         ],
       },
     ],
+    
   },
   {
-    buildingId: 1,
-    fragmentId: 2,
-    storeyId: 2,
-    workDetailId: 2,
+    buildingId: 0,
+    fragmentId: 0,
+    storeyId: 0,
 
-    workProgressId: 2,
-    // workProgress: 90,
+    workId: 1,
+    workDetailId: 2,
+    workDetailProgress: 90,
+    workDetailName: "Okna",
     workDetailImages: [
       {
         imagesData: "12-09-2020",
@@ -197,13 +190,14 @@ export const exampleWorkProgress = [
     ],
   },
   {
-    buildingId: 1,
-    fragmentId: 2,
-    storeyId: 2,
-    workDetailId: 3,
+    buildingId: 0,
+    fragmentId: 0,
+    storeyId: 0,
 
-    workProgressId: 3,
-    // workProgress: 50,
+    workId: 1,
+    workDetailId: 3,
+    workDetailProgress: 50,
+    workDetailName: "Drzwi",
     workDetailImages: [
       {
         imagesData: "21-09-2020",
@@ -216,4 +210,126 @@ export const exampleWorkProgress = [
       },
     ],
   },
+  {
+    buildingId: 1,
+    fragmentId: 2,
+    storeyId: 2,
+
+    workId: 2,
+    workDetailId: 4,
+    workDetailProgress: 10,
+    workDetailName: "Instalacje",
+    workDetailImages: [
+      {
+        imagesData: null,
+        images: [],
+      },
+    ],
+  },
+  {
+    buildingId: 0,
+    fragmentId: 0,
+    storeyId: 0,
+    workDetailId: 0,
+
+    workId: 3,
+    workDetailId: 5,
+    workDetailProgress: 15,
+    workDetailName: "Okablowanie w ścianach",
+    workDetailImages: [
+      {
+        imagesData: null,
+        images: [],
+      },
+    ],
+  },
 ];
+
+// export const exampleWorkProgress = [
+//   {
+//     buildingId: 0,
+//     fragmentId: 0,
+//     storeyId: 0,
+//     workDetailId: 0,
+
+//     workProgressId: 0,
+//     // workProgress: 100,
+//     workDetailImages: [
+//       {
+//         imagesData: "25-08-2020",
+//         images: [
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//         ],
+//       },
+//       {
+//         imagesData: "11-08-2020",
+//         images: [
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//           "https://s3.egospodarka.pl/grafika2/murarz/Murarz-191277-200x133crop.jpg",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     buildingId: 0,
+//     fragmentId: 0,
+//     storeyId: 0,
+//     workDetailId: 1,
+
+//     workProgressId: 1,
+//     // workProgress: 80,
+//     workDetailImages: [
+//       {
+//         imagesData: "29-08-2020",
+//         images: [
+//           "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+//           "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+//           "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+//           "http://www.r-tynk.pl/_include/img/profile/profile-02.jpg",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     buildingId: 1,
+//     fragmentId: 2,
+//     storeyId: 2,
+//     workDetailId: 2,
+
+//     workProgressId: 2,
+//     // workProgress: 90,
+//     workDetailImages: [
+//       {
+//         imagesData: "12-09-2020",
+//         images: [
+//           "https://fixly.pl/blog/wp-content/uploads/2018/12/monta%C5%BC-okien.jpg",
+//           "https://fixly.pl/blog/wp-content/uploads/2018/12/monta%C5%BC-okien.jpg",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     buildingId: 1,
+//     fragmentId: 2,
+//     storeyId: 2,
+//     workDetailId: 3,
+
+//     workProgressId: 3,
+//     // workProgress: 50,
+//     workDetailImages: [
+//       {
+//         imagesData: "21-09-2020",
+//         images: [
+//           "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+//           "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+//           "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+//           "http://www.drzwivasco.pl/assets/images/boxy/oscieznice_tlo.jpg",
+//         ],
+//       },
+//     ],
+//   },
+// ];
