@@ -1,33 +1,11 @@
 <p>building-selection works!</p>
 
 <!--  -->
-<form *ngIf="editMode" class="container-lg my-1">
-  <div class="form-row">
-    <div class="col">
-      <input
-        class="form-control"
-        id="addBuilding"
-        type="text"
-        formControlName="addBuilding"
-        placeholder="Add new Building"
-      />
-    </div>
-    <button class="btn btn-success" type="submit">+</button>
-  </div>
-  
-</form>
 
-<div class="input-group mb-3 container-lg">
+<app-form-add [boolean]="editMode" [name]="'Building'"></app-form-add>
+<div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
-      <!-- <input
-        *ngIf="editMode; else elseBlock"
-        id="selectBuilding"
-        type="text"
-        formControlName="selectBuilding"
-        value="{{ selectBuilding }}"
-      />
-      <ng-template #elseBlock>{{ selectBuilding }}</ng-template> -->
       {{ selectBuilding }}
     </label>
   </div>
@@ -37,24 +15,24 @@
     id="inputGroupSelect"
     (change)="onBuildingChange(buildingSelect.value)"
   >
-    <!-- <option selected>Choose...</option> -->
-    <!-- <option value="{{ null }}" selected>Wszystkie...</option> -->
+  <!-- <option value="{{ null }}" selected>Wszystkie...</option> -->
     <ng-container *ngFor="let building of buildings; let i = index">
-      <option value="{{ building.buildingId }}">
+      <option value="{{ building.buildingId }}"
+      >
         {{ building.buildingName }}
       </option>
     </ng-container>
-    <!-- 
-    <option
-      *ngFor="let building of buildings; let i = index"
-      value="{{ building.buildingId }}"
-    >
-      {{ building.buildingName }}
-    </option> -->
   </select>
 </div>
+<app-form-change
+  [boolean]="editMode"
+  [selectedId]="buildingIdSelected"
+  [name]="'Building'"
+></app-form-change>
 
-<div class="input-group mb-3 container-lg">
+<hr />
+<app-form-add [boolean]="editMode" [name]="'Fragment'"></app-form-add>
+<div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
       {{ selectFragment }}
@@ -71,14 +49,22 @@
       <option
         *ngIf="buildingSelect.value == fragment.buildingId"
         value="{{ fragment.fragmentId }}"
+        label="{{ fragment.fragmentName }}"
       >
         {{ fragment.fragmentName }}
       </option>
     </ng-container>
   </select>
 </div>
+<app-form-change
+  [boolean]="editMode"
+  [selectedId]="fragmentIdSelected"
+  [name]="'Fragment'"
+></app-form-change>
 
-<div class="input-group mb-3 container-lg">
+<hr />
+<app-form-add [boolean]="editMode" [name]="'Storey'"></app-form-add>
+<div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
       {{ selectStorey }}
@@ -103,6 +89,11 @@
     </ng-container>
   </select>
 </div>
+<app-form-change
+  [boolean]="editMode"
+  [selectedId]="storeyIdSelected"
+  [name]="'Storey'"
+></app-form-change>
 
 <!--  -->
 

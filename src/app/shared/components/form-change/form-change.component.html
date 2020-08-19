@@ -1,0 +1,14 @@
+<form *ngIf="boolean" class="container-lg my-1">
+  <div *ngIf="selectedId" class="form-row">
+    <div class="col">
+      <input
+        class="form-control"
+        id="change{{name}}{{ selectedId }}"
+        type="text"
+        placeholder="Change selected Name"
+      />
+    </div>
+    <button class="btn btn-warning" type="submit">Change</button>
+    <!-- <button class="btn btn-danger" type="submit">Delete</button> -->
+  </div>
+</form>

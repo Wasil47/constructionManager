@@ -88,7 +88,7 @@ export const exampleWorks = [
   {
     buildingId: [0, 1],
     fragmentId: [0, 1, 2, 3],
-    storeyId: [0, 1, 2, 3],
+    storeyId: [0, 1, 2, 3, 4],
     categoryId: [0, 1],
     workId: 0,
     workName: "Ścianki",
@@ -96,7 +96,7 @@ export const exampleWorks = [
   {
     buildingId: [0, 1],
     fragmentId: [0, 1, 2, 3],
-    storeyId: [0, 1, 2, 3],
+    storeyId: [0, 1, 2, 3, 4],
     categoryId: [0, 1],
     workId: 1,
     workName: "Stolarka",

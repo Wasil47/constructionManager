@@ -7,6 +7,7 @@ import {
 } from '../../../../data/examples/exampleProject2';
 
 import { BuildingService } from '../../services/building.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-building-selection',
@@ -26,48 +27,57 @@ export class BuildingSelectionComponent implements OnInit {
   // fragmentsList: string[] = [];
   // storeysList: string[] = [];
 
-  buildings: {
-    buildingId: number;
-    buildingName: string;
-  } = exampleBuildings;
-  fragments: {
-    buildingId: number;
-    fragmentId: number;
-    fragmentName: string;
-  } = exampleFragments;
-  storeys: {
-    fragmentId: number;
-    storeyId: number;
-    storeyName: string;
-  } = exampleStoreys;
+  buildings: [
+    {
+      buildingId: number;
+      buildingName: string;
+    }
+  ] = exampleBuildings;
+  fragments: [
+    {
+      buildingId: number;
+      fragmentId: number;
+      fragmentName: string;
+    }
+  ] = exampleFragments;
+  storeys: [
+    {
+      fragmentId: number;
+      storeyId: number;
+      storeyName: string;
+    }
+  ] = exampleStoreys;
 
   selectBuilding = 'Obiekt';
   selectFragment = 'Część';
   selectStorey = 'Kondygnacja';
 
-  constructor(private building: BuildingService) {}
+  constructor(
+    private building: BuildingService,
+    private userService: UserService
+  ) {}
 
   onBuildingChange(buildingSelect) {
     this.buildingIdSelected = buildingSelect;
-    console.log('Building ID: ' + this.buildingIdSelected);
     this.building.changeBuilding(buildingSelect);
     this.onFragmentChange(null);
   }
   onFragmentChange(fragmentSelect) {
     this.fragmentIdSelected = fragmentSelect;
-    console.log('Fragment ID: ' + this.fragmentIdSelected);
     this.building.changeFragment(fragmentSelect);
     this.onStoreyChange(null);
   }
   onStoreyChange(storeySelect) {
     this.storeyIdSelected = storeySelect;
-    console.log('Storey ID: ' + this.storeyIdSelected);
     this.building.changeStorey(storeySelect);
   }
 
   ngOnInit(): void {
-    this.building.editModeSelected.subscribe(
+    this.userService.editModeSelected.subscribe(
       (boolean) => (this.editMode = boolean)
+    );
+    this.building.buildingIdSelected.subscribe(
+      (id) => (this.buildingIdSelected = id)
     );
   }
 }

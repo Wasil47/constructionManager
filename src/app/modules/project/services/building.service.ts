@@ -14,11 +14,6 @@ export class BuildingService {
   private categoryId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   categoryIdSelected = this.categoryId.asObservable();
 
-  private editMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
-  editModeSelected = this.editMode.asObservable();
-
   constructor() {}
 
   changeBuilding(selectedId: number) {
@@ -36,9 +31,5 @@ export class BuildingService {
   changeCategory(selectedId: number) {
     this.categoryId.next(selectedId);
     console.log('Category ID: ' + this.categoryId.value);
-  }
-  changeEditMode(boolean: boolean) {
-    this.editMode.next(boolean);
-    console.log('Edit mode: ' + this.editMode.value);
   }
 }

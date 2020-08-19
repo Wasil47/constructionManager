@@ -7,6 +7,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProjectModule } from './modules/project/project.module';
 import { BuildingService } from './modules/project/services/building.service';
+import { UserService } from './modules/project/services/user.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { BuildingService } from './modules/project/services/building.service';
     AppRoutingModule,
     ProjectModule
   ],
-  providers: [BuildingService],
+  providers: [BuildingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

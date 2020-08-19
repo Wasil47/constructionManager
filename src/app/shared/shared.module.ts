@@ -5,14 +5,24 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { DropdownSelectComponent } from './components/dropdown-select/dropdown-select.component';
 import { DropdownInfoComponent } from './components/dropdown-info/dropdown-info.component';
 import { DropdownInfoDetailComponent } from './components/dropdown-info/dropdown-info-detail/dropdown-info-detail.component';
-
+import { FormChangeComponent } from './components/form-change/form-change.component';
+import { FormAddComponent } from './components/form-add/form-add.component';
 
 @NgModule({
-  declarations: [DropdownSelectComponent, DropdownInfoComponent, DropdownInfoDetailComponent],
-  imports: [
-    CommonModule,
-    SharedRoutingModule
+  declarations: [
+    DropdownSelectComponent,
+    DropdownInfoComponent,
+    DropdownInfoDetailComponent,
+    FormChangeComponent,
+    FormAddComponent,
   ],
-  exports: [DropdownSelectComponent, DropdownInfoComponent, DropdownInfoDetailComponent]
+  imports: [CommonModule, SharedRoutingModule],
+  exports: [
+    DropdownSelectComponent,
+    DropdownInfoComponent,
+    DropdownInfoDetailComponent,
+    FormChangeComponent,
+    FormAddComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

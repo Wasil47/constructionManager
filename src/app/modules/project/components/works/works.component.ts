@@ -5,6 +5,7 @@ import {
   exampleWorks,
   exampleWorkDetails,
 } from '../../../../data/examples/exampleProject2';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-works',
@@ -52,7 +53,10 @@ export class WorksComponent implements OnInit {
   // infoDetailImg: string =
   //   'http://www.r-tynk.pl/_include/img/profile/profile-02.jpg';
 
-  constructor(private building: BuildingService) {}
+  constructor(
+    private building: BuildingService,
+    private userService: UserService
+  ) {}
 
   buildingIdSelected: number;
   fragmentIdSelected: number;
@@ -103,7 +107,7 @@ export class WorksComponent implements OnInit {
     this.building.categoryIdSelected.subscribe(
       (id) => (this.categoryIdSelected = id)
     );
-    this.building.editModeSelected.subscribe(
+    this.userService.editModeSelected.subscribe(
       (boolean) => (this.editMode = boolean)
     );
   }

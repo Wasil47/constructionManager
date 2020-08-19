@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BuildingService } from '../../services/building.service';
+import { Component } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-project',
@@ -8,14 +8,14 @@ import { BuildingService } from '../../services/building.service';
 })
 export class ProjectComponent {
   editMode: boolean;
-  constructor(private building: BuildingService) {}
+  constructor(private userService: UserService) {}
   onSubmitEdit(boolean) {
     this.editMode = boolean;
-    this.building.changeEditMode(boolean);
+    this.userService.changeEditMode(boolean);
   }
 
   ngOnInit(): void {
-    this.building.editModeSelected.subscribe(
+    this.userService.editModeSelected.subscribe(
       (boolean) => (this.editMode = boolean)
     );
   }
