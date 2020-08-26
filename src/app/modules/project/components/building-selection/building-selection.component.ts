@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { exampleProject } from '../../../../data/examples/exampleProject';
 import {
   exampleBuildings,
   exampleFragments,
@@ -71,6 +70,16 @@ export class BuildingSelectionComponent implements OnInit {
     this.storeyIdSelected = storeySelect;
     this.building.changeStorey(storeySelect);
   }
+
+  //
+  receiveTestMessage($event) {
+    console.log($event);
+    this.buildings.push({
+      buildingId: 10,
+      buildingName: $event,
+    })
+  }
+  //
 
   ngOnInit(): void {
     this.userService.editModeSelected.subscribe(

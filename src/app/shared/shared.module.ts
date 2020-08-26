@@ -7,6 +7,7 @@ import { DropdownInfoComponent } from './components/dropdown-info/dropdown-info.
 import { DropdownInfoDetailComponent } from './components/dropdown-info/dropdown-info-detail/dropdown-info-detail.component';
 import { FormChangeComponent } from './components/form-change/form-change.component';
 import { FormAddComponent } from './components/form-add/form-add.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FormAddComponent } from './components/form-add/form-add.component';
     FormChangeComponent,
     FormAddComponent,
   ],
-  imports: [CommonModule, SharedRoutingModule],
+  imports: [CommonModule, SharedRoutingModule, FormsModule],
   exports: [
     DropdownSelectComponent,
     DropdownInfoComponent,

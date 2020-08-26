@@ -2,7 +2,11 @@
 
 <!--  -->
 
-<app-form-add [boolean]="editMode" [name]="'Building'"></app-form-add>
+<app-form-add
+  [boolean]="editMode"
+  [name]="'Building'"
+  (event)="receiveTestMessage($event)"
+></app-form-add>
 <div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
@@ -15,10 +19,9 @@
     id="inputGroupSelect"
     (change)="onBuildingChange(buildingSelect.value)"
   >
-  <!-- <option value="{{ null }}" selected>Wszystkie...</option> -->
+    <!-- <option value="{{ null }}" selected>Wszystkie...</option> -->
     <ng-container *ngFor="let building of buildings; let i = index">
-      <option value="{{ building.buildingId }}"
-      >
+      <option value="{{ building.buildingId }}">
         {{ building.buildingName }}
       </option>
     </ng-container>

@@ -1,11 +1,14 @@
-<form *ngIf="boolean" class="container-lg my-1">
+<form *ngIf="boolean" class="container-lg my-1" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-row">
     <div class="col">
       <input
         class="form-control"
-        id="add{{name}}"
+        id="add{{ name }}"
         type="text"
-        placeholder="Add new {{name}}"
+        placeholder="Add new {{ name }}"
+
+        ngModel
+        name="add{{ name }}"
       />
     </div>
     <button class="btn btn-success" type="submit">+</button>
