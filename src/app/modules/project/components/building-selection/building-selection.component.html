@@ -1,11 +1,7 @@
-<p>building-selection works!</p>
-
-<!--  -->
-
 <app-form-add
   [boolean]="editMode"
   [name]="'Building'"
-  (event)="receiveTestMessage($event)"
+  (event)="onBuildingAdd($event)"
 ></app-form-add>
 <div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
@@ -31,10 +27,15 @@
   [boolean]="editMode"
   [selectedId]="buildingIdSelected"
   [name]="'Building'"
+  (event)="onBuildingNameChange($event)"
 ></app-form-change>
 
 <hr />
-<app-form-add [boolean]="editMode" [name]="'Fragment'"></app-form-add>
+<app-form-add
+  [boolean]="editMode"
+  [name]="'Fragment'"
+  (event)="onFragmentAdd($event)"
+></app-form-add>
 <div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
@@ -63,10 +64,15 @@
   [boolean]="editMode"
   [selectedId]="fragmentIdSelected"
   [name]="'Fragment'"
+  (event)="onFragmentNameChange($event)"
 ></app-form-change>
 
 <hr />
-<app-form-add [boolean]="editMode" [name]="'Storey'"></app-form-add>
+<app-form-add
+  [boolean]="editMode"
+  [name]="'Storey'"
+  (event)="onStoreyAdd($event)"
+></app-form-add>
 <div class="input-group my-1 container-lg">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect">
@@ -96,7 +102,10 @@
   [boolean]="editMode"
   [selectedId]="storeyIdSelected"
   [name]="'Storey'"
+  (event)="onStoreyNameChange($event)"
 ></app-form-change>
+
+<hr />
 
 <!--  -->
 

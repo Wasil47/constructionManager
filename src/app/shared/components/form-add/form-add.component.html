@@ -1,4 +1,9 @@
-<form *ngIf="boolean" class="container-lg my-1" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form
+  *ngIf="boolean"
+  class="container-lg my-1"
+  (ngSubmit)="onSubmit(f)"
+  #f="ngForm"
+>
   <div class="form-row">
     <div class="col">
       <input
@@ -7,6 +12,7 @@
         type="text"
         placeholder="Add new {{ name }}"
 
+        value="{{ initialValue }}"
         ngModel
         name="add{{ name }}"
       />

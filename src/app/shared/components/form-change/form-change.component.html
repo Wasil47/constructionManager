@@ -1,11 +1,20 @@
-<form *ngIf="boolean" class="container-lg my-1">
+<form
+  *ngIf="boolean"
+  class="container-lg my-1"
+  (ngSubmit)="onSubmit(f)"
+  #f="ngForm"
+>
   <div *ngIf="selectedId" class="form-row">
     <div class="col">
       <input
         class="form-control"
-        id="change{{name}}{{ selectedId }}"
+        id="change{{ name }}{{ selectedId }}"
         type="text"
         placeholder="Change selected Name"
+
+        value="{{ initialValue }}"
+        ngModel
+        name="add{{ name }}"
       />
     </div>
     <button class="btn btn-warning" type="submit">Change</button>

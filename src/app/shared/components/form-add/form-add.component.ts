@@ -12,14 +12,15 @@ export class FormAddComponent implements OnInit {
   @Output() event = new EventEmitter<string>();
 
   componentName: string;
+  initialValue: null;
 
   constructor() {}
 
   onSubmit(form: NgForm) {
     this.componentName = "add" + this.name;
     console.log('Submitted!');
-    // console.log(form.value.test);
     this.event.emit(form.value[this.componentName]);
+    this.initialValue = null;
   }
 
   ngOnInit(): void {}
